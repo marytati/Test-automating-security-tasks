@@ -11,7 +11,7 @@ def scan_pull_requests():
     pass
 
 if __name__ == "__main__":
-    g = Github(os.getenv('GITHUB_TOKEN'))
+    g = Github(os.getenv('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'))
     repo = g.get_repo(os.getenv('GITHUB_REPOSITORY'))
     pull_requests = repo.get_pulls(state='open')
     for pr in pull_requests:
