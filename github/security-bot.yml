@@ -1,0 +1,14 @@
+name: Security Bot
+on: 
+  pull_request:
+    types: [opened, edited, reopened]
+jobs:
+  security_bot:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Run Security Bot
+      uses: ./
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
